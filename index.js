@@ -28,7 +28,7 @@
 
 const express = require("express");
 const path = require("path");
-const serverless = require("serverless-http");
+const serverless = require("serverless-http"); 
 const { sendDailyReportEmail,sendDailyTeamReportEmail,sendEndOfDayTeamReportEmail } = require("./sendEmail");
 const users = require("./mockData");
 
