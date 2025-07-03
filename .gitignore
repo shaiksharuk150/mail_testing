@@ -1,0 +1,32 @@
+# Node modules
+node_modules/
+
+# Environment variables
+.env
+
+# Log files
+logs
+*.log
+npm-debug.log*
+
+# OS-specific
+.DS_Store
+
+# Optional build output
+dist/
+build/
+
+# IDE/editor settings
+.vscode/
+.idea/
+
+# Coverage reports
+coverage/
+
+# Temporary files
+*.tmp
+*.swp
+
+# Dependency lock (optional, if using yarn or npm ci)
+# yarn.lock
+# package-lock.json

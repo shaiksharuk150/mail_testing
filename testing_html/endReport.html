@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Team End of Day Report - <%= manager.name %></title>
+</head>
+<body style="margin: 0; padding: 0; background-color: #f4f4f4; font-family: Arial, sans-serif;">
+  <div style="max-width: 600px; margin: 30px auto; background: #ffffff; border-radius: 10px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.08);">
+
+    <!-- Header -->
+    <div style="background: #289fb7; padding: 24px;">
+      <table style="width: 100%;">
+        <tr>
+          <td style="color: #ffffff; font-size: 22px; font-weight: bold;">
+            📋 End of Day Team Report
+          </td>
+          <td style="text-align: right; color: #d6eaf8; font-size: 14px;">
+            <%= date %>
+          </td>
+        </tr>
+      </table>
+      <p style="color: #f0f8ff; margin-top: 10px; font-size: 14px;">Hi <%= manager.name %>, here’s your team’s summary for the day.</p>
+    </div>
+
+    <!-- Table -->
+    <div style="padding: 20px;">
+
+      <table width="100%" cellpadding="0" cellspacing="0" style="width:100%;margin:36px 0px;font-family:Lato,sans-serif">
+        <thead style="font-family:Lato,sans-serif">
+            <tr style="font-family:Lato,sans-serif">
+            <th style="font-family:Lato,sans-serif;font-size:16px">
+                <h2 style="font-size:16px;font-weight:700;margin:0px 0px 4px;font-family:Lato,sans-serif;color:rgb(68,68,68)" align="left">Team Member</h2>
+            </th>
+            <th style="font-family:Lato,sans-serif;font-size:10px;font-weight:normal;text-transform:uppercase;color:rgb(168,170,175)" align="right">Completed Tasks</th>
+            <th style="font-family:Lato,sans-serif;font-size:10px;font-weight:normal;text-transform:uppercase;color:rgb(168,170,175)" align="right">Site Visits</th>
+            </tr>
+        </thead>
+         <tbody style="font-family:Lato,sans-serif">
+          <% team.forEach((member, index) => { %>
+            <tr style="background-color: <%= index % 2 === 0 ? '#ffffff' : '#fafafa' %>;">
+              <td style="word-break:break-word;font-family:Lato,sans-serif;font-size:14px;padding:4px 0px"><%= member.name %></td>
+              <td style="word-break:break-word;font-family:Lato,sans-serif;font-size:14px;padding:4px 0px" align="right"><%= member.tasksCompleted %></td>
+              <td style="word-break:break-word;font-family:Lato,sans-serif;font-size:14px;padding:4px 0px" align="right"><%= member.visitFixed %></td>
+            </tr>
+          <% }) %>
+        </tbody>
+        </tbody>
+        </table>
+    </div>
+
+    <!-- Unsubscribe Section -->
+    <div style="padding: 20px; text-align: center; background-color: #ffffff; ">
+      <p style="font-size: 12px; color: #888; margin-bottom: 8px;">
+        Don’t want to receive these reports? You can unsubscribe below.
+      </p>
+      <a href="https://yourdomain.com/unsubscribe?email=<%= manager.email %>"
+        style="font-size: 13px; color: #ffffff; background-color: #e74c3c; text-decoration: none; padding: 10px 20px; border-radius: 4px; display: inline-block;">
+        Unsubscribe
+      </a>
+    </div>
+
+    <!-- Copyright -->
+    <div style="background-color: #f4f4f4; padding: 20px; text-align: center;">
+      <p style="font-size: 12px; color: #aaa; margin: 0;">
+        © 2025 Redefine ERP Estates. All rights reserved.<br>
+        This is an automated system message from <strong>Redefine ERPs</strong>.
+      </p>
+    </div>
+  </div>
+</body>
+</html>

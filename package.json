@@ -1,0 +1,29 @@
+{
+  "name": "sendgrid-ejs-mailer",
+  "version": "1.0.0",
+  "description": "Send emails using SendGrid with EJS templating",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "vercel dev"
+  },
+  "keywords": [
+    "sendgrid",
+    "ejs",
+    "email",
+    "nodejs",
+    "template"
+  ],
+  "author": "Shaik Sharuk",
+  "license": "MIT",
+  "dependencies": {
+    "@sendgrid/mail": "^7.7.0",
+    "@supabase/supabase-js": "^2.50.2",
+    "axios": "^1.10.0",
+    "dotenv": "^16.4.0",
+    "ejs": "^3.1.9",
+    "express": "^4.18.2",
+    "firebase": "^11.9.1",
+    "serverless-http": "^3.2.0"
+  }
+}

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Daily Report - <%= name %></title>
+</head>
+<body style="font-family: Arial, sans-serif; background: #f4f4f4; padding: 30px 10px; margin: 0;">
+  <div style="max-width: 600px; margin: auto; background: #ffffff; border-radius: 10px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+    
+    <!-- Header -->
+    <div style="background-color: #3498db; padding: 20px;">
+      <h2 style="color: #ffffff; margin: 0;">📊 Daily Work Summary</h2>
+      <p style="color: #d6eaf8; font-size: 14px;">Hi <%= name %>, here’s your report summary.</p>
+    </div>
+
+    <!-- Report Table -->
+    <table style="width: 100%; border-collapse: collapse; font-size: 15px;">
+      <tbody>
+        <tr style="background-color: #f9f9f9;">
+          <td style="padding: 14px 20px; font-weight: bold;">Project</td>
+          <td style="padding: 14px 20px;"><%= project %></td>
+        </tr>
+        <tr>
+          <td style="padding: 14px 20px; font-weight: bold;">Tasks Completed</td>
+          <td style="padding: 14px 20px;"><%= tasksCompleted %></td>
+        </tr>
+        <tr style="background-color: #f9f9f9;">
+          <td style="padding: 14px 20px; font-weight: bold;">Site Visits</td>
+          <td style="padding: 14px 20px;"><%= siteVisits %></td>
+        </tr>
+        <tr>
+          <td style="padding: 14px 20px; font-weight: bold;">Total Amount Collected</td>
+          <td style="padding: 14px 20px;"><%= totalAmount %></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- Footer Illustration -->
+    <div style="padding: 30px 0 0 0; text-align: center;">
+      <img 
+        src="./footer-design.png"
+        alt="Footer Decoration"
+        style="display: block; max-width: 100%; border: none; margin: 0 auto;" 
+        width="600"
+      />
+    </div>
+
+    <!-- Footer Details -->
+    <div style="background-color: #f4f4f4; padding: 20px; text-align: center;">
+      <p style="font-size: 13px; color: #888; margin: 0;">
+        © 2025 Redefine ERP Estates · All rights reserved.
+      </p>
+      <p style="font-size: 12px; color: #999; margin-top: 6px;">
+        This is an automated email from <strong>Redefine ERP</strong>.
+      </p>
+
+      <!-- Unsubscribe Button -->
+      <a href="https://yourdomain.com/unsubscribe?email=<%= encodeURIComponent(email) %>" 
+         style="display: inline-block; margin-top: 10px; padding: 10px 18px; background-color: #e74c3c; color: white; text-decoration: none; border-radius: 5px; font-size: 14px;">
+        Unsubscribe
+      </a>
+    </div>
+  </div>
+</body>
+</html>

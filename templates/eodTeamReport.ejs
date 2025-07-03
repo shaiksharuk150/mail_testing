@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Team End of Day Report - <%= manager.name %></title>
+</head>
+<body style="margin: 0; padding: 0; background-color: #f4f4f4; font-family: 'Lato', Arial, sans-serif;">
+
+  <div style="max-width: 600px; margin: 30px auto; background-color: #ffffff; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);">
+
+    <div style="background: linear-gradient(90deg, #3b8dff, #a979f8); padding: 24px;">
+      <table style="width: 100%;">
+        <tr>
+          <td style="color: #ffffff; font-size: 22px; font-weight: bold;">
+            📋 End of Day Team Report
+          </td>
+          <td style="text-align: right; color: #d6eaf8; font-size: 14px;">
+            <%= date %>
+          </td>
+        </tr>
+      </table>
+      <p style="color: #f0f8ff; margin-top: 10px; font-size: 14px;">Hi <%= manager.name %>, here’s your team’s summary for the day.</p>
+    </div>
+
+    <!-- Summary Table -->
+    <div style="padding: 24px 20px;">
+      <table width="100%" cellpadding="0" cellspacing="0" style="border-collapse: collapse; font-size: 14px;">
+        <thead>
+          <tr style="border-bottom: 2px solid #eeeeee; text-align: left;">
+            <th style="padding: 10px 6px; color: #444;">Team Member</th>
+            <th style="padding: 10px 6px; color: #888; text-align: right;">Completed Tasks</th>
+            <th style="padding: 10px 6px; color: #888; text-align: right;">Visits Fixed</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% team.forEach((member, index) => { %>
+            <tr style="background-color: <%= index % 2 === 0 ? '#fff' : '#f9f9f9' %>;">
+              <td style="padding: 12px 6px; color: #333;"><%= member.name %></td>
+              <td style="padding: 12px 6px; text-align: right; color: #333;"><%= member.tasksCompleted %></td>
+              <td style="padding: 12px 6px; text-align: right; color: #333;"><%= member.visitFixed %></td>
+            </tr>
+          <% }) %>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Unsubscribe Section -->
+    <div style="background-color: #fff; padding: 20px; text-align: center; border-top: 1px solid #eee;">
+      <p style="font-size: 12px; color: #888; margin: 0 0 10px;">
+        Don’t want to receive these reports? You can unsubscribe below.
+      </p>
+      <a href="https://yourdomain.com/unsubscribe?email=<%= manager.email %>"
+         style="font-size: 13px; color: #ffffff; background-color: #e74c3c; text-decoration: none; padding: 10px 20px; border-radius: 6px; display: inline-block;">
+        Unsubscribe
+      </a>
+    </div>
+
+    <!-- Footer -->
+    <div style="background-color: #f4f4f4; padding: 16px; text-align: center;">
+      <p style="font-size: 12px; color: #aaa; margin: 0;">
+        © 2025 Redefine ERP Estates. All rights reserved.<br>
+        This is an automated system message from <strong>Redefine ERPs</strong>.
+      </p>
+    </div>
+
+  </div>
+</body>
+</html>
